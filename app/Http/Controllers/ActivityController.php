@@ -21,7 +21,14 @@ class ActivityController extends Controller
 
     public function store(ActivityRequest $request)
     {
-        return 'producto guardado';
+        $activity = new Activity;
+
+        $activity->nameActivity = $request->nameActivity;
+        $activity->shortActivity = $request->shortActivity;
+        
+        $activity->save();
+
+        return redirect()->route('activities.index')->with('info','La actividad ha sido registrada');
     }
 
     public function edit($id)
@@ -32,7 +39,14 @@ class ActivityController extends Controller
 
     public function update(ActivityRequest $request, $id)
     {
-        return 'producto editado';
+        $activity = Activity::find($id);
+
+        $activity->nameActivity = $request->nameActivity;
+        $activity->shortActivity = $request->shortActivity;
+        
+        $activity->save();
+
+        return redirect()->route('activities.index')->with('info','La actividad ha sido actualizada');
     }
 
     public function show($id)
