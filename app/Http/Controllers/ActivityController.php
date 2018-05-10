@@ -23,7 +23,7 @@ class ActivityController extends Controller
     {
         $activity = new Activity;
 
-        $activity->nameActivity = $request->nameActivity;
+        $activity->nameActivity  = $request->nameActivity;
         $activity->shortActivity = $request->shortActivity;
         
         $activity->save();
@@ -41,7 +41,7 @@ class ActivityController extends Controller
     {
         $activity = Activity::find($id);
 
-        $activity->nameActivity = $request->nameActivity;
+        $activity->nameActivity  = $request->nameActivity;
         $activity->shortActivity = $request->shortActivity;
         
         $activity->save();

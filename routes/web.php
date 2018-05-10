@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::resource('activities', 'ActivityController');
+Route::resource('consultants', 'ConsultantController');
+Route::resource('companies', 'CompanyController');

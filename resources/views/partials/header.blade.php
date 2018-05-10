@@ -25,16 +25,16 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                    <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="material-icons">content_paste</i>
                         <p>Tablas Principales</p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/consultant">Consultor</a>
-                        <a class="dropdown-item" href="/activities">Actitivades</a>
-                        <a class="dropdown-item" href="/companyusers">Usuarios Empresas</a>
-                        <a class="dropdown-item" href="/business">Empresas</a>
-                        <a class="dropdown-item" href="/systemusers">Usuarios Sistema</a>
+                        <a class="dropdown-item" href="{{ route('consultants.index') }}">Consultor</a>
+                        <a class="dropdown-item" href="{{ route('activities.index') }}">Actitivades</a>
+                        <a class="dropdown-item" href="#">Usuarios Empresas</a>
+                        <a class="dropdown-item" href="#">Empresas</a>
+                        <a class="dropdown-item" href="#">Usuarios Sistema</a>
                     </div>
                 </li>
             <li class="nav-item ">

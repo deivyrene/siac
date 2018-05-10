@@ -99,7 +99,11 @@ return [
     'attributes' => [
 
       'nameActivity' => 'nombre',
-      'shortActivity' => 'descripción breve'
+      'shortActivity' => 'descripción breve',
+      'nameConsultant' => 'nombre',
+      'positionConsultant' => 'cargo',
+      'fonoConsultant' => 'fono',
+      'emailConsultant' => 'correo',
 
     ],
 ];
