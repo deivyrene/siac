@@ -33,7 +33,7 @@
                         <a class="dropdown-item" href="{{ route('consultants.index') }}">Consultor</a>
                         <a class="dropdown-item" href="{{ route('activities.index') }}">Actitivades</a>
                         <a class="dropdown-item" href="#">Usuarios Empresas</a>
-                        <a class="dropdown-item" href="#">Empresas</a>
+                        <a class="dropdown-item" href="{{ route('companies.index') }}">Empresas</a>
                         <a class="dropdown-item" href="#">Usuarios Sistema</a>
                     </div>
                 </li>

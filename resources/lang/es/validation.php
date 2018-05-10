@@ -98,12 +98,19 @@ return [
     */
     'attributes' => [
 
-      'nameActivity' => 'nombre',
+      'nameActivity' => 'nombre actividad',
       'shortActivity' => 'descripción breve',
-      'nameConsultant' => 'nombre',
-      'positionConsultant' => 'cargo',
+      'nameConsultant' => 'nombre consultor',
+      'positionConsultant' => 'cargo consultor',
       'fonoConsultant' => 'fono',
       'emailConsultant' => 'correo',
+      'nameCompany' => 'nombre empresa',
+      'attendantCompany' => 'encargado empresa',
+      'addressCompany' => 'direccion',
+      'fonoCompanyA' => 'fono A',
+      'fonoCompanyB' => 'fono B',
+      'fonoCompanyC' => 'fono C',
+      'emailCompany' => 'email',
 
     ],
 ];
