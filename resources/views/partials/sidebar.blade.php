@@ -48,13 +48,26 @@
                             <a class="dropdown-item" href="#">Another One</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pablo">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#pablo" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="material-icons">person</i>
                             <p>
                                 <span class="d-lg-none d-md-block">Account</span>
                             </p>
                         </a>
+                        <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        Salir
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                        </ul>
                     </li>
                 </ul>
             </div>

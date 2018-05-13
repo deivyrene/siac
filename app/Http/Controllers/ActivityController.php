@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Siac\Activity;
 use Siac\Http\Requests\ActivityRequest;
 
+
 class ActivityController extends Controller
 {
     public function index(){

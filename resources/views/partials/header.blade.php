@@ -32,13 +32,13 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ route('consultants.index') }}">Consultor</a>
                         <a class="dropdown-item" href="{{ route('activities.index') }}">Actitivades</a>
-                        <a class="dropdown-item" href="#">Usuarios Empresas</a>
+                        <a class="dropdown-item" href="{{ route('businessusers.index') }}">Usuarios Empresas</a>
                         <a class="dropdown-item" href="{{ route('companies.index') }}">Empresas</a>
                         <a class="dropdown-item" href="#">Usuarios Sistema</a>
                     </div>
                 </li>
             <li class="nav-item ">
-                <a class="nav-link" href="/activities">
+                <a class="nav-link" href="{{ route('registeractivities.index') }}">
                     <i class="material-icons">unarchive</i>
                     <p>Registrar Actividad</p>
                 </a>

@@ -176,7 +176,12 @@ return [
         // Siac\Providers\BroadcastServiceProvider::class,
         Siac\Providers\EventServiceProvider::class,
         Siac\Providers\RouteServiceProvider::class,
+
+        //Form collective
         Collective\Html\HtmlServiceProvider::class,
+
+        //Datatables
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
     ],
 

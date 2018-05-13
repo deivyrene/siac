@@ -7,15 +7,15 @@
             <div class="card-header card-header-primary" style="background: #383131">
                 <h2>
                     Editar Actividad
-                    <a href="{{ route('consultants.index') }}" class="btn btn-info pull-right">Listar</a>
+                    <a href="{{ route('businessusers.index') }}" class="btn btn-info pull-right">Listar</a>
                 </h2>
             </div>
             <div class="card-body">
-                @include('consultants.fragment.error')
+                @include('businessusers.fragment.error')
 
-                {{ Form::model($consultant, array('route' => ['consultants.update', $consultant->id], 'method' => 'PUT')) }}
+                {{ Form::model($businessuser, array('route' => ['businessusers.update', $businessuser->id], 'method' => 'PUT')) }}
 
-                    @include('consultants.fragment.form')
+                    @include('businessusers.fragment.form')
 
                 {{ Form::close() }}
             </div>

@@ -4,7 +4,7 @@ namespace Siac\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CompanyRequest extends FormRequest
+class BusinessUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,15 +24,11 @@ class CompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            'nameCompany' => 'required',
-            'attendantCompany' => 'required',
-            'addressCompany' => 'required',
-            'fonoCompanyA' => 'required',
-            'fonoCompanyB' => 'required',
-            'fonoCompanyC' => 'required',
-            'emailCompany' => 'required',
+            'nameBusinessUser' => 'required',
+            'fonoBusinessUser' => 'required',
+            'emailBusinessUser' => 'required',
+            'idCompanies' => 'required',
         ];
     }
 
-    
 }

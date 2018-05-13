@@ -9,4 +9,9 @@ class Company extends Model
     protected $fillable = [
         'nameCompany', 'attendantCompany', 'addressCompany', 'fonoCompanyA', 'fonoCompanyB', 'fonoCompanyC', 'emailCompany'
     ];
+
+    public function relationBusiness()
+    {
+        return $this->belongsTo('Siac\BusinessUser');
+    }
 }

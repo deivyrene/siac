@@ -19,6 +19,10 @@
 
     <link rel="stylesheet" href="{{{ URL::asset('css/material-dashboard.css?v=2.0.0') }}}">
 
+
+    <!--     DataTables     -->
+    <link rel="stylesheet" href="{{{ URL::asset('css/jquery.dataTables.min.css') }}}">
+    
     <!-- Documentation extras -->
     <!-- CSS Just for demo purpose, dont include it in your project -->
     {{--  <link href="{{{ URL::asset('assets-for-demo/demo.css')}}}" rel="stylesheet" />   --}}
