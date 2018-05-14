@@ -3,7 +3,6 @@
 namespace Siac\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
 use Siac\BusinessUser;
 use Siac\Company;
@@ -44,7 +43,7 @@ class BusinessUserController extends Controller
     }
 
     public function edit($id){
-
+       
         $businessuser = BusinessUser::find($id);
         $companies = Company::all(['id', 'nameCompany']);
         return view('businessusers.edit', compact('businessuser','companies'));
@@ -60,10 +59,25 @@ class BusinessUserController extends Controller
         $businessuser->emailBusinessUser = $request->emailBusinessUser;
         $businessuser->idCompanies = $request->idCompanies;
 
-        $businessuser->saved();
+        $businessuser->save();
 
         return redirect()->route('businessusers.index')->with('info','Se ha editado exitosamente');
 
+    }
+
+    public function show($id){
+
+        $businessuser = BusinessUser::find($id);
+        
+    }
+
+    public function destroy($id){
+
+        $businessuser = BusinessUser::find($id);
+
+        $businessuser->delete();
+
+        return back()->with('info', 'Se ha eliminado con éxito');
     }
 
     public function getTasks()

@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Estás logeado!
+                    SIAC
                 </div>
             </div>
         </div>

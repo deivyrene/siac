@@ -21,8 +21,9 @@ class CreateRegisterActivitiesTable extends Migration
             $table->integer('consultants_id')->unsigned();
             $table->integer('activities_id')->unsigned();
             $table->integer('businessuser_id')->unsigned();
-            $table->string('descriptionActivities');
+            $table->string('desRegisterActivity');
             $table->date('dateRegisterActivity');
+            $table->date('dateRegisterActivities');
 
             // foreign key
             $table->foreign('companies_id')->references('id')->on('companies');

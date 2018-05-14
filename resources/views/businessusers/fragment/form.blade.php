@@ -18,7 +18,7 @@
         <select class="form-control" name="idCompanies" id="idCompanies">
                         <option value="0">Seleccione</option>
                 @foreach($companies as $company)
-                        <option <?php if(isset($businessuser)){ if($businessuser->idCompanies == $company->id){ echo "selected"; } }?> >{{$company->nameCompany}}</option>
+                        <option value="<?= $company->id ?>" <?php if(isset($businessuser)){ if($businessuser->idCompanies == $company->id){ echo "selected"; } }?> >{{$company->nameCompany}}</option>
                 @endforeach
         </select>
 </div>

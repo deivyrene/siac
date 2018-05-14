@@ -8,7 +8,7 @@
         <div class="card">
                 <div class="card-header card-header-primary" style="background:#383131">
                     <h4 class="card-title ">
-                        Listado de Registros
+                        Listado de Registros de Actividades
                         <a href="{{ route('registeractivities.create') }}" class="btn btn-danger pull-right">Nuevo</a>
                     </h4>
                     
@@ -29,16 +29,14 @@
                                 </tr>
                         </thead>
                         <tbody>
-                            <?php //dd($businessusers); die();?>
                             @foreach($registeractivities as $registeractivity)
                             <tr>
                                 <td>{{ $registeractivity->id    }}</td>
-                                <td>{{ $registeractivity->nameCompany }}</td>
-                                <td>{{ $registeractivity->nameConsultant }}</td>
-                                <td>{{ $registeractivity->nameBusinessUser }}</td>
-                                <td>{{ $registeractivity->nameActivity }}</td> 
-                                <td>{{ $registeractivity->dateRegisterActivity}}</td>
-                                {{-- [0]->nameCompany --}}
+                                <td>{{ $registeractivity->companies->nameCompany }}</td>
+                                <td>{{ $registeractivity->consultants->nameConsultant }}</td>
+                                <td>{{ $registeractivity->businessuser->nameBusinessUser}}</td>
+                                <td>{{ $registeractivity->activities->nameActivity }}</td> 
+                                <td>{{ $registeractivity->dateRegisterActivity }}</td>
                                 <td>
                                     <div class="btn-group">
                                         <a href="{{ route('registeractivities.show', $registeractivity->id)    }}" class="btn btn-success "><i class="material-icons">pageview</i></a>
@@ -55,7 +53,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                      {{ $businessusers->links('pagination.default') }}
+                      {{ $registeractivities->links('pagination.default') }}
 
                     </div>
                 </div>

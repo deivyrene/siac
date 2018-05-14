@@ -14,4 +14,10 @@ class Company extends Model
     {
         return $this->belongsTo('Siac\BusinessUser');
     }
+
+    public function registerActivity()
+    {
+        return $this->hasMany('Siac\RegisterActivity');
+    }
+    
 }
