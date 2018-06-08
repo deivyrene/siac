@@ -5,21 +5,21 @@
     -->
     
     <div class="logo">
-        <a href="http://www.sipcom.cl" target="_blank" class="simple-text logo-normal">
-            SIPCOM SIAC
+        <a href="/siac/home" target="_blank" class="simple-text logo-normal">
+            <img width="200" src="{{{ URL::asset('img/sipcom.png') }}}">
         </a>
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="nav-item active ">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="/siac/home">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
             <li class="nav-item ">
                 <div  class="dropdown-menu dropdown-menu-right">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="#">
                     <i class="material-icons">content_paste</i>
                     <p>Tablas Principales</p>
                 </a>
@@ -32,9 +32,9 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ route('consultants.index') }}">Consultor</a>
                         <a class="dropdown-item" href="{{ route('activities.index') }}">Actitivades</a>
-                        <a class="dropdown-item" href="{{ route('businessusers.index') }}">Usuarios Empresas</a>
                         <a class="dropdown-item" href="{{ route('companies.index') }}">Empresas</a>
-                        <a class="dropdown-item" href="#">Usuarios Sistema</a>
+                        <a class="dropdown-item" href="{{ route('businessusers.index') }}">Usuarios Empresas</a>
+                        <a class="dropdown-item" href="{{ route('users.index') }}">Usuarios Sistema</a>
                     </div>
                 </li>
             <li class="nav-item ">

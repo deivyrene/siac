@@ -7,7 +7,7 @@
             <div class="card-header card-header-primary" style="background:#383131">
                 <h2>
                     Nuevo Registro de Actividad
-                    <a href="{{ route('registeractivities.index') }}" class="btn btn-info pull-right">Listar</a>
+                    <a href="{{ route('registeractivities.index') }}" class="btn btn-info pull-right">Volver</a>
                 </h2>
             </div>
             <div class="card-body">

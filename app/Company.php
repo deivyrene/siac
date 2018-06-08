@@ -15,9 +15,9 @@ class Company extends Model
         return $this->belongsTo('Siac\BusinessUser');
     }
 
-    public function registerActivity()
+    public function registeractivity()
     {
-        return $this->hasMany('Siac\RegisterActivity');
+        return $this->hasMany('Siac\RegisterActivity', 'company_id', 'dateRegisterActivities');
     }
     
 }

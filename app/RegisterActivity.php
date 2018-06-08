@@ -12,22 +12,22 @@ class RegisterActivity extends Model
 
     public function companies()
     {
-        return $this->belongsTo('Siac\Company');
+        return $this->belongsTo('Siac\Company', 'company_id');
     }
 
     public function activities()
     {
-        return $this->belongsTo('Siac\Activity');
+        return $this->belongsTo('Siac\Activity', 'activity_id');
     }
 
     public function consultants()
     {
-        return $this->belongsTo('Siac\Consultant');
+        return $this->belongsTo('Siac\Consultant', 'consultant_id');
     }
 
     public function businessuser()
     {
-        return $this->belongsTo('Siac\BusinessUser');
+        return $this->belongsTo('Siac\BusinessUser', 'businessuser_id');
     }
 
 

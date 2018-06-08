@@ -6,13 +6,27 @@ use Illuminate\Http\Request;
 use Siac\Company;
 use Siac\Http\Requests\CompanyRequest;
 
+use Yajra\Datatables\Datatables;
+use Yajra\DataTables\Services\DataTable;
+
 class CompanyController extends Controller
 {
     public function index(){
 
-        $companies = Company::orderBy('id','DESC')->paginate(10);
+        //$companies = Company::orderBy('id','DESC')->paginate(5);
 
         return view('companies.index', compact('companies'));
+    }
+
+    public function getCompany()
+    {
+        $companies = Company::orderBy('id','DESC');
+ 
+        return Datatables::of($companies)->addColumn('action', function ($user) {
+            return '<a href="http://www.sipcom.cl/siac/companies/'.$user->id.'" class="btn btn-sm btn-success"><i class="material-icons">pageview</i></a>
+                    <a href="http://www.sipcom.cl/siac/companies/'.$user->id.'/edit" class="btn btn-sm btn-info"><i class="material-icons">border_color</i></a>
+                    <a href="#" onclick="destroyCompany('.$user->id.')" class="btn btn-sm btn-warning"><i class="material-icons">delete_forever</i></a>';
+        })->make(true);
     }
 
     public function create(){
@@ -62,12 +76,15 @@ class CompanyController extends Controller
         return redirect()->route('companies.index')->with('info', 'La empresa se ha editado');
     }
 
-    public function destroy($id){
+    public function destroyCompany(request $request){
 
-        $company = Company::find($id);
-        $company->delete();
+        if($request->ajax()){
 
-        return back()->with('info', 'Se ha eliminado el registro');
+            $company = Company::find($request->id);
+            $company->delete();
+
+            return 'La empresa ha sido eliminada';
+        }
     }
 
     public function show($id){

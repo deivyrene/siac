@@ -1,5 +1,5 @@
 @if(Session::has('info'))
-    <div class="alert alert-info">
+    <div class="alert alert-success">
         <button class="close" data-dismiss="alert">
             &times;
         </button>

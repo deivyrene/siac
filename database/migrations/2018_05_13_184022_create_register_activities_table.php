@@ -17,18 +17,19 @@ class CreateRegisterActivitiesTable extends Migration
             
             $table->increments('id');
 
-            $table->integer('companies_id')->unsigned();
-            $table->integer('consultants_id')->unsigned();
-            $table->integer('activities_id')->unsigned();
+            $table->integer('codActivity');
+            $table->integer('company_id')->unsigned();
+            $table->integer('consultant_id')->unsigned();
+            $table->integer('activity_id')->unsigned();
             $table->integer('businessuser_id')->unsigned();
             $table->string('desRegisterActivity');
             $table->date('dateRegisterActivity');
             $table->date('dateRegisterActivities');
 
             // foreign key
-            $table->foreign('companies_id')->references('id')->on('companies');
-            $table->foreign('consultants_id')->references('id')->on('consultants');
-            $table->foreign('activities_id')->references('id')->on('activities');
+            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('consultant_id')->references('id')->on('consultants');
+            $table->foreign('activity_id')->references('id')->on('activities');
             $table->foreign('businessuser_id')->references('id')->on('business_users');
             
             // auditoria

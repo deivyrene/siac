@@ -6,13 +6,25 @@ use Illuminate\Http\Request;
 use Siac\Activity;
 use Siac\Http\Requests\ActivityRequest;
 
+use Yajra\Datatables\Datatables;
+use Yajra\DataTables\Services\DataTable;
 
 class ActivityController extends Controller
 {
     public function index(){
 
-        $activities = Activity::orderBy('id','DESC')->paginate(10);
         return view('activities.index', compact('activities'));
+    }
+
+    public function getActivity()
+    {
+        $activities = Activity::orderBy('id','DESC');
+ 
+        return Datatables::of($activities)->addColumn('action', function ($user) {
+            return '<a href="http://www.sipcom.cl/siac/activities/'.$user->id.'" class="btn btn-sm btn-success"><i class="material-icons">pageview</i></a>
+                    <a href="http://www.sipcom.cl/siac/activities/'.$user->id.'/edit" class="btn btn-sm btn-info"><i class="material-icons">border_color</i></a>
+                    <a href="#" onclick="destroyActivity('.$user->id.')" class="btn btn-sm btn-warning"><i class="material-icons">delete_forever</i></a>';
+        })->make(true);
     }
 
     public function create()
@@ -56,11 +68,13 @@ class ActivityController extends Controller
         return view('activities.show', compact('activity'));
     }
 
-    public function destroy($id)
+    public function destroyActivity(request $request)
     {
-        $activity = Activity::find($id);
-        $activity->delete();
+        if($request->ajax()){
+            $activity = Activity::find($request->id);
+            $activity->delete();
 
-        return back()->with('info','La actividad fue eliminada');
+            return "La actividad ha sido eliminada";
+        }
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title','Admin Inicio | Admin Index')
-@section('pagtitle','Admin Home | Admin Home')
+@section('title','SIPCOM | SIAC')
+@section('pagtitle','SIPCOM | SIAC')
 
 @section('content')
     <div class="row">
@@ -9,17 +9,15 @@
             <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
                     <div class="card-icon">
-                        <i class="material-icons">content_copy</i>
+                        <i class="material-icons">people</i>
                     </div>
-                    <p class="card-category">Used Space</p>
-                    <h3 class="card-title">49/50
-                        <small>GB</small>
-                    </h3>
+                    <p class="card-category">Consultores</p>
+                    <h3 class="card-title">+{{ $countConsultant }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons text-danger">warning</i>
-                        <a href="#pablo">Get More Space...</a>
+                        <i class="material-icons">description</i>
+                        <a href="{{ route('consultants.index') }}">Listar</a>
                     </div>
                 </div>
             </div>
@@ -28,14 +26,14 @@
             <div class="card card-stats">
                 <div class="card-header card-header-success card-header-icon">
                     <div class="card-icon">
-                        <i class="material-icons">store</i>
+                        <i class="material-icons">business</i>
                     </div>
-                    <p class="card-category">Revenue</p>
-                    <h3 class="card-title">$34,245</h3>
+                    <p class="card-category">Empresas</p>
+                    <h3 class="card-title">+{{ $countCompany }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">date_range</i> Last 24 Hours
+                        <i class="material-icons">date_range</i> Actualizado
                     </div>
                 </div>
             </div>
@@ -44,14 +42,14 @@
             <div class="card card-stats">
                 <div class="card-header card-header-danger card-header-icon">
                     <div class="card-icon">
-                        <i class="material-icons">info_outline</i>
+                        <i class="material-icons">table_chart</i>
                     </div>
-                    <p class="card-category">Fixed Issues</p>
-                    <h3 class="card-title">75</h3>
+                    <p class="card-category">Actividades</p>
+                    <h3 class="card-title">+{{ $countActivity }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">local_offer</i> Tracked from Github
+                        <i class="material-icons">local_offer</i> Completadas
                     </div>
                 </div>
             </div>
@@ -60,21 +58,21 @@
             <div class="card card-stats">
                 <div class="card-header card-header-info card-header-icon">
                     <div class="card-icon">
-                        <i class="fa fa-twitter"></i>
+                        <i class="material-icons">person_pin</i>
                     </div>
-                    <p class="card-category">Followers</p>
-                    <h3 class="card-title">+245</h3>
+                    <p class="card-category">Usuarios</p>
+                    <h3 class="card-title">+{{ $countUser }}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">update</i> Just Updated
+                        <i class="material-icons">update</i> Actualizado
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
+     <!--   <div class="col-md-4">
             <div class="card card-chart">
                 <div class="card-header card-header-success">
                     <div class="ct-chart" id="dailySalesChart"></div>
@@ -90,41 +88,45 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <div class="col-md-4">
             <div class="card card-chart">
-                <div class="card-header card-header-warning">
+                <div class="card-header card-header-danger">
                     <div class="ct-chart" id="websiteViewsChart"></div>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Email Subscriptions</h4>
-                    <p class="card-category">Last Campaign Performance</p>
+                    <h4 class="card-title">Último usuario registrado</h4>
+                    @foreach($lastUser as $user)
+                    <p class="card-category">{{ $user->nameBusinessUser}} | {{ $user->emailBusinessUser }}</p>
+                    @endforeach
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                        <i class="material-icons">access_time</i> Actualización automática
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card card-chart">
-                <div class="card-header card-header-danger">
+                <div class="card-header card-header-warning">
                     <div class="ct-chart" id="completedTasksChart"></div>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Completed Tasks</h4>
-                    <p class="card-category">Last Campaign Performance</p>
+                    <h4 class="card-title">Actividades completadas</h4>
+                    @foreach($lastActivity as $activity)
+                        <p class="card-category">{{ $activity->consultants->nameConsultant}} | {{ $activity->companies->nameCompany}}</p>
+                    @endforeach
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                        <i class="material-icons">access_time</i> Actualización automática
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <!--<div class="row">
         <div class="col-lg-6 col-md-12">
             <div class="card">
                 <div class="card-header card-header-tabs card-header-primary">
@@ -413,7 +415,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 
 @endsection

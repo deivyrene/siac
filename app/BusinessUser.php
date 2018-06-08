@@ -13,7 +13,7 @@ class BusinessUser extends Model
     ];
 
     
-    public function relationCompany()
+    public function companies()
     {
         return $this->belongsTo('Siac\Company', 'idCompanies');
     }
