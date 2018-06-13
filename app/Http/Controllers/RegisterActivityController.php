@@ -180,7 +180,7 @@ class RegisterActivityController extends Controller
 
         $pdf = PDF::loadView('pdf.reporte_actividades', compact('registeractivities'))->setPaper('a4');
         
-        $moreUsers = "dgarcia@sipcom.cl";
+        $moreUsers = ['dgarcia@sipcom.cl','rrojas@sipcom.cl'];
         Mail::to($email, $name)->cc($moreUsers)->send(new sendMailPdf($registeractivities, $pdf));
         
         return redirect()->route('registeractivities.index')->with('info', 'Se ha enviado el correo satisfactoriamente');

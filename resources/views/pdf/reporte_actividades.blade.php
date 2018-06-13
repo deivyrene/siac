@@ -16,10 +16,10 @@
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-            <table class="table table-hover border" >
+            <table >
                 <thead>
                     <tr>
-                        <td rowspan="4" colspan="2" align="center"><img src="http://www.sipcom.cl/siac/img/sipcom.png" alt="" width="210"></td>
+                        <td rowspan="4" colspan="2" align="center"><img src="http://www.sipcom.cl/siac/img/sipcom.png" alt="" width="200"></td>
                         <td rowspan="4" colspan="7" align="center"><h3>SISTEMA DE GESTIÓN</h3></td>
                         <td colspan="2">Fecha 10/01/2015</td>
                     </tr>
@@ -55,8 +55,8 @@
                 </thead>
                 <tbody>
                     <tr class="text-white bg-dark">
-                        <td colspan="3">Usuarios que aplica</td>
-                        <td colspan="3">Tipo Actividad</td>
+                        <td colspan="3">Usuarios</td>
+                        <td colspan="3">Actividad</td>
                         <td colspan="3">Descripción</td>
                         <td colspan="2">Fecha</td>
                     </tr>
@@ -64,10 +64,46 @@
                     <tr>
                         <td colspan="3">{{ $registeractivity->businessuser->nameBusinessUser }}</td>
                         <td colspan="3">{{ $registeractivity->activities->nameActivity }}</td>
-                        <td colspan="3">{{ $registeractivity->desRegisterActivity }}</td>
+                        <td colspan="3">&nbsp; &nbsp;{{ $registeractivity->desRegisterActivity }}</td>
                         <td colspan="2">{{ $registeractivity->dateRegisterActivity }}</td>
                     </tr>
                     @endforeach
+                    <tr>
+                        <td colspan="3"></td>
+                        <td colspan="3"></td>
+                        <td colspan="3"></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td colspan="3"></td>
+                        <td colspan="3"></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td colspan="3"></td>
+                        <td colspan="3"></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td colspan="3"></td>
+                        <td colspan="3"></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td colspan="3"></td>
+                        <td colspan="3"></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr class="text-white bg-dark">
+                        <td colspan="3">Usuarios</td>
+                        <td colspan="3">Actividad</td>
+                        <td colspan="3">Descripción</td>
+                        <td colspan="2">Fecha</td>
+                    </tr>
                 </tbody>
             </table>
             </div>

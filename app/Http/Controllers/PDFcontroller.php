@@ -19,12 +19,13 @@ class PDFcontroller extends Controller
                                                     'businessuser'     
                                                 ])->where('codActivity', '=', $datos)
                                                     ->get();
+        $namePdf = "informe_actividad_".$registeractivities[0]->codActivity.".pdf";
 		
 	  // generación de la vista
 	  $pdf = PDF::loadView($vista, compact('registeractivities') )->setPaper('a4');
  
 	  // lanzamos la descarga del fichero
-	  return $pdf->download('informe_actividades.pdf');
+	  return $pdf->download($namePdf);
 	}
  
 	public function crearInformeTodosUsuarios($datos){

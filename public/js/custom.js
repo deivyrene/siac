@@ -92,7 +92,7 @@ var registerActivity = function(table){
         "language": {"url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"},
         paging: true,
         searching: true,
-        "ajax": "/registeractivity",
+        "ajax": "/siac/registeractivity",
         "columns": [
             {data: 'codActivity', name: 'codActivity'},
             {data: 'companies.nameCompany', name: 'nameCompany'},
@@ -133,7 +133,7 @@ var registerActivity = function(table){
                 },
             },
         ],
-        pageLength: 5,
+        pageLength: 10,
     });
 
 };
@@ -204,7 +204,7 @@ var Activity = function(table){
                 },
             },
         ],
-        pageLength: 5,
+        pageLength: 10,
     });
 
 };
@@ -277,7 +277,7 @@ var Company = function(table){
                 },
             },
         ],
-        pageLength: 5,
+        pageLength: 10,
     });
 
 };
@@ -351,7 +351,7 @@ var UserCompany = function(table){
                 },
             },
         ],
-        pageLength: 5,
+        pageLength: 10,
     });
 
 };
@@ -423,7 +423,7 @@ var UserSystem = function(table){
                 },
             },
         ],
-        pageLength: 5,
+        pageLength: 10,
     });
 
 };

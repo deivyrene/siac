@@ -16,12 +16,14 @@ class sendMailPdf extends Mailable
     public $registerActivity;
     public $subject;
     public $pdf;
+    public $namePdf;
 
     public function __construct($registerActivity, $pdf)
     {
         $this->registerActivity = $registerActivity;
         $this->subject = "Informe de registro de actividad";
         $this->pdf = $pdf;
+        $this->namePdf = $registerActivity[0]->codActivity;
     }
 
     /**
@@ -31,9 +33,8 @@ class sendMailPdf extends Mailable
      */
     public function build()
     {
-
         return $this->view('mail.view')
-                    ->attachData($this->pdf->output(), 'informe_actividades.pdf', [
+                    ->attachData($this->pdf->output(), "informe_actividad_".$this->namePdf.".pdf", [
                         'mime' => 'application/pdf',
                     ])
                     ->subject($this->subject)

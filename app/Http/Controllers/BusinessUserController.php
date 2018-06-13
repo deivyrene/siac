@@ -22,7 +22,7 @@ class BusinessUserController extends Controller
         
         $businessusers = BusinessUser::with(['companies' => function($query){
                                                 $query->select('id','nameCompany');
-                                            }]);
+                                            }])->orderBy('id', 'asc');
         
         return Datatables::of($businessusers)->addColumn('action', function ($user) {
             return '<a href="http://www.sipcom.cl/siac/businessusers/'.$user->id.'" class="btn btn-sm btn-success"><i class="material-icons">pageview</i></a>
