@@ -9,7 +9,7 @@
                         {{ csrf_field() }}
                 <div class="card card-login" style="margin-top: 150px">
 
-                        <div class="card-header card-header-info text-center">
+                        <div class="card-header card-header-danger  text-center">
                              <h4 class="card-title">INGRESAR</h4>
                         </div>
 
@@ -55,7 +55,7 @@
                                 <div class="form-group">
                                     <div class="row">
                                     <div class="col-md-12 col-md-offset-4 text-center">
-                                        <button type="submit" class="btn btn-danger">
+                                        <button type="submit" class="btn btn-success">
                                             Login
                                         </button>
 

@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-            <nav class="navbar navbar-expand-lg bg-warning navbar-absolute" color-on-scroll="500">
+            <nav class="navbar navbar-expand-lg bg-info navbar-absolute" color-on-scroll="500">
                 <div class="container">
                 <div class="navbar-wrapper">
                         <a class="navbar-brand" href="#pablo"><img style="margin-top:-5px" height="45"  src="{{{ URL::asset('img/logo_nav.png') }}}"></img></a>
