@@ -26,7 +26,7 @@
 <script src="{{{ URL::asset('js/core/html2pdf.js') }}}" type="text/javascript"></script>
 
 <!-- Datatables -->
-<script src="https://demos.creative-tim.com/material-dashboard-pro/assets/js/plugins/jquery.datatables.js"></script>
+<script src="{{{ URL::asset('js/jquery.dataTables.min.js') }}}"></script>
 
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>

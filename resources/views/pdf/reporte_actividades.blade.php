@@ -7,7 +7,6 @@
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-        <link href="https://demos.creative-tim.com/material-dashboard/assets/css/material-dashboard.min.css?v=2.0.0" rel="stylesheet">
         
 </head>
 
